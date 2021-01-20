@@ -3,7 +3,10 @@ package com.example.githubuser.ui.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings
 import android.view.KeyEvent
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
@@ -61,6 +64,19 @@ class MainActivity : AppCompatActivity() {
                 showLoading(false)
             }
         })
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.action_change_settings){
+            val intent = Intent(Settings.ACTION_LOCALE_SETTINGS)
+            startActivity(intent)
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 

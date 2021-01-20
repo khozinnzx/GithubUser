@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">GithubUser</string>
+    <string name="search">Pencarian</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="tab_text_1">Pengikut</string>
+    <string name="tab_text_2">Mengikuti</string>
+    <string name="empty_search_sign">anda belum mengisi pencarian</string>
+    <string name="Followers">Pengikut</string>
+    <string name="Following">Mengikuti</string>
+    <string name="change_language_settings">Ubah Pengaturan Bahasa</string>
+
+</resources>
