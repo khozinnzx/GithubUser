@@ -6,6 +6,10 @@
         android:title="@string/change_language_settings"
         app:showAsAction="never"/>
     <item
+        android:id="@+id/action_reminder"
+        android:title="@string/set_reminder"
+        app:showAsAction="never"/>
+    <item
         android:id="@+id/favorite_menu"
         android:title="Favorite"
         android:icon="@drawable/ic_baseline_favorite_red"

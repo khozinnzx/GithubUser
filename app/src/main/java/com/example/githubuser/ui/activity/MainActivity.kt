@@ -83,6 +83,10 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, FavoriteActivity::class.java)
                 startActivity(intent)
             }
+            R.id.action_reminder -> {
+                val intent = Intent(this, SettingsActivity::class.java)
+                startActivity(intent)
+            }
         }
 
         return super.onOptionsItemSelected(item)
