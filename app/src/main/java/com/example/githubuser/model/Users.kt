@@ -6,11 +6,9 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Users(
-    val login: String?,
-    val id: Int?,
-    val node_id: String?,
-    val avatar_url: String?,
-    val gravatar_id: String?,
+    val login: String,
+    val id: Int,
+    val avatar_url: String,
     val url: String?,
     val html_url: String?,
     val followers_url: String?,

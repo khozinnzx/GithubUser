@@ -13,8 +13,6 @@ import com.example.githubuser.adapter.UserAdapter
 import com.example.githubuser.databinding.FragmentFollowingBinding
 import com.example.githubuser.ui.activity.DetailActivity
 import com.example.githubuser.viewmodel.FollowingViewModel
-import kotlinx.android.synthetic.main.fragment_follower.*
-import kotlinx.android.synthetic.main.fragment_following.*
 
 
 class FollowingFragment : Fragment(R.layout.fragment_following) {
@@ -37,9 +35,9 @@ class FollowingFragment : Fragment(R.layout.fragment_following) {
         adapter = UserAdapter()
         adapter.notifyDataSetChanged()
 
-        rv_following.setHasFixedSize(true)
-        rv_following.layoutManager = LinearLayoutManager(activity)
-        rv_following.adapter = adapter
+        binding.rvFollowing.setHasFixedSize(true)
+        binding.rvFollowing.layoutManager = LinearLayoutManager(activity)
+        binding.rvFollowing.adapter = adapter
 
         showLoading(true)
         followingViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(

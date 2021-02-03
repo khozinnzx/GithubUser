@@ -16,7 +16,6 @@ import com.example.githubuser.adapter.UserAdapter
 import com.example.githubuser.databinding.ActivityMainBinding
 import com.example.githubuser.model.Users
 import com.example.githubuser.viewmodel.MainViewModel
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -45,6 +44,9 @@ class MainActivity : AppCompatActivity() {
             override fun onItemClicked(data: Users) {
                 val intent = Intent(this@MainActivity, DetailActivity::class.java)
                 intent.putExtra(DetailActivity.EXTRA_STATE, data.login)
+                intent.putExtra(DetailActivity.EXTRA_ID, data.id)
+                intent.putExtra(DetailActivity.EXTRA_AVATAR_URL, data.avatar_url)
+                intent.putExtra(DetailActivity.EXTRA_URL, data.url)
                 startActivity(intent)
             }
 
@@ -72,16 +74,23 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.action_change_settings){
-            val intent = Intent(Settings.ACTION_LOCALE_SETTINGS)
-            startActivity(intent)
+        when(item.itemId){
+            R.id.action_change_settings -> {
+                val intent = Intent(Settings.ACTION_LOCALE_SETTINGS)
+                startActivity(intent)
+            }
+            R.id.favorite_menu -> {
+                val intent = Intent(this, FavoriteActivity::class.java)
+                startActivity(intent)
+            }
         }
+
         return super.onOptionsItemSelected(item)
     }
 
 
     private fun searchUser(){
-        val query = searchBar.text.toString()
+        val query = binding.searchBar.text.toString()
         if (query.isEmpty()){
             Toast.makeText(this, getString(R.string.empty_search_sign),Toast.LENGTH_SHORT).show()
             return

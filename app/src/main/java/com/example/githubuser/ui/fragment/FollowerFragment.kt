@@ -14,7 +14,6 @@ import com.example.githubuser.adapter.UserAdapter
 import com.example.githubuser.databinding.FragmentFollowerBinding
 import com.example.githubuser.ui.activity.DetailActivity
 import com.example.githubuser.viewmodel.FollowersViewModel
-import kotlinx.android.synthetic.main.fragment_follower.*
 
 class FollowerFragment : Fragment(R.layout.fragment_follower) {
 
@@ -36,9 +35,9 @@ class FollowerFragment : Fragment(R.layout.fragment_follower) {
         adapter = UserAdapter()
         adapter.notifyDataSetChanged()
 
-        rv_follower.setHasFixedSize(true)
-        rv_follower.layoutManager = LinearLayoutManager(activity)
-        rv_follower.adapter = adapter
+        binding.rvFollower.setHasFixedSize(true)
+        binding.rvFollower.layoutManager = LinearLayoutManager(activity)
+        binding.rvFollower.adapter = adapter
 
         showLoading(true)
         followersViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(FollowersViewModel::class.java)

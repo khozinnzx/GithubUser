@@ -1,18 +1,16 @@
 package com.example.githubuser.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
-import com.example.githubuser.R
+import com.example.githubuser.data.FavoriteUser
 import com.example.githubuser.databinding.ItemUserBinding
 import com.example.githubuser.model.Users
 
-class UserAdapter : RecyclerView.Adapter<UserAdapter.ViewHolder>() {
+class FavoriteUserAdapter: RecyclerView.Adapter<FavoriteUserAdapter.ViewHolder>() {
 
-    private val listUsers = ArrayList<Users>()
+    private val listUsers = ArrayList<FavoriteUser>()
 
     private var onItemClickCallback: OnItemClickCallback? = null
 
@@ -20,7 +18,7 @@ class UserAdapter : RecyclerView.Adapter<UserAdapter.ViewHolder>() {
         this.onItemClickCallback = onItemClickCallback
     }
 
-    fun setData(users: ArrayList<Users>) {
+    fun setData(users: ArrayList<FavoriteUser>) {
         listUsers.clear()
         listUsers.addAll(users)
         notifyDataSetChanged()
@@ -39,7 +37,7 @@ class UserAdapter : RecyclerView.Adapter<UserAdapter.ViewHolder>() {
 
 
     inner class ViewHolder(val binding: ItemUserBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(users: Users) {
+        fun bind(users: FavoriteUser) {
             Glide.with(itemView.context)
                 .load(users.avatar_url)
                 .into(binding.imageUser)
@@ -51,7 +49,6 @@ class UserAdapter : RecyclerView.Adapter<UserAdapter.ViewHolder>() {
     }
 
     interface OnItemClickCallback{
-        fun onItemClicked(data: Users)
+        fun onItemClicked(data: FavoriteUser)
     }
-
 }

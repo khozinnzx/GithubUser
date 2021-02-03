@@ -11,9 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GithubUser">
-        <activity android:name=".ui.activity.MainActivity"></activity>
+        <activity android:name=".ui.activity.SettingsActivity"></activity>
+        <activity android:name=".ui.activity.FavoriteActivity" />
+        <activity android:name=".ui.activity.MainActivity" />
         <activity android:name=".ui.activity.DetailActivity" />
-        <activity android:name=".ui.activity.SplashScreen"
+        <activity
+            android:name=".ui.activity.SplashScreen"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
