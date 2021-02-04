@@ -15,30 +15,6 @@ class MainViewModel : ViewModel() {
 
     val listUsers = MutableLiveData<ArrayList<Users>>()
 
-//    fun getDataFromApi() {
-//        ApiClient.getRetrofit.getUsers()
-//            .enqueue(object : Callback<ArrayList<Users>> {
-//                override fun onResponse(
-//                    call: Call<ArrayList<Users>>,
-//                    response: Response<ArrayList<Users>>
-//                ) {
-//                    if (response.isSuccessful) {
-//                        val listItems = ArrayList<Users>()
-//                        response.body()?.let { listItems.addAll(it) }
-//                        listUsers.postValue(listItems)
-//
-//                    }
-//                }
-//
-//                override fun onFailure(call: Call<ArrayList<Users>>, t: Throwable) {
-//                    Log.e("onFailure: ", t.toString())
-//                }
-//            })
-//    }
-//
-//    fun getListData(): LiveData<ArrayList<Users>> {
-//        return listUsers
-//    }
 
     fun loadSearch(query: String) {
         ApiClient.getRetrofit.getSearchUser(query).enqueue(object : Callback<UserResponse> {

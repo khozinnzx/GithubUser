@@ -1,23 +1,22 @@
-package com.example.githubuser.adapter
+package com.example.consumerapp
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.githubuser.data.FavoriteUser
-import com.example.githubuser.databinding.ItemUserBinding
+import com.example.consumerapp.databinding.ItemUserBinding
 
-class FavoriteUserAdapter: RecyclerView.Adapter<FavoriteUserAdapter.ViewHolder>() {
+class FavoriteUserAdapter : RecyclerView.Adapter<FavoriteUserAdapter.ViewHolder>() {
 
-    private val listUsers = ArrayList<FavoriteUser>()
+    private val listUsers = ArrayList<Users>()
 
     private var onItemClickCallback: OnItemClickCallback? = null
 
-    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback){
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
         this.onItemClickCallback = onItemClickCallback
     }
 
-    fun setData(users: ArrayList<FavoriteUser>) {
+    fun setData(users: ArrayList<Users>) {
         listUsers.clear()
         listUsers.addAll(users)
         notifyDataSetChanged()
@@ -36,7 +35,7 @@ class FavoriteUserAdapter: RecyclerView.Adapter<FavoriteUserAdapter.ViewHolder>(
 
 
     inner class ViewHolder(val binding: ItemUserBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(users: FavoriteUser) {
+        fun bind(users: Users) {
             Glide.with(itemView.context)
                 .load(users.avatar_url)
                 .into(binding.imageUser)
@@ -47,7 +46,7 @@ class FavoriteUserAdapter: RecyclerView.Adapter<FavoriteUserAdapter.ViewHolder>(
         }
     }
 
-    interface OnItemClickCallback{
-        fun onItemClicked(data: FavoriteUser)
+    interface OnItemClickCallback {
+        fun onItemClicked(data: Users)
     }
 }

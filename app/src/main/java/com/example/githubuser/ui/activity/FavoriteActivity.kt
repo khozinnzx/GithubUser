@@ -3,16 +3,11 @@ package com.example.githubuser.ui.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.githubuser.R
 import com.example.githubuser.adapter.FavoriteUserAdapter
-import com.example.githubuser.adapter.UserAdapter
 import com.example.githubuser.data.FavoriteUser
 import com.example.githubuser.databinding.ActivityFavoriteBinding
-import com.example.githubuser.model.Users
-import com.example.githubuser.viewmodel.DetailActivityViewModel
 import com.example.githubuser.viewmodel.FavoriteViewModel
 
 class FavoriteActivity : AppCompatActivity() {

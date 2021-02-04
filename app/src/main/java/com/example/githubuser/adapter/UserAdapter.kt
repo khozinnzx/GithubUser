@@ -1,12 +1,9 @@
 package com.example.githubuser.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
-import com.example.githubuser.R
 import com.example.githubuser.databinding.ItemUserBinding
 import com.example.githubuser.model.Users
 
