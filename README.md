@@ -31,7 +31,6 @@ Daily reminder untuk kembali ke aplikasi yang berjalan pada pukul 09.00 AM.
 Membuat module baru yang menampilkan daftar user favorite.
 Menggunakan Content Provider sebagai mekanisme untuk mengakses data dari satu aplikasi ke aplikasi lain.
 
-Screenshot App
 
 
 
